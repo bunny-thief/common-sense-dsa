@@ -14,15 +14,20 @@ public class BubbleSort {
         while (isSorted) {
             isSorted = false;
             for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i + 1]) {
-                    int temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-                    isSorted = true;
-                }
+                isSorted = swapNumbers(array, isSorted, i);
             }
             System.out.println(Arrays.toString(array));
         }
+    }
+
+    private static boolean swapNumbers(int[] array, boolean isSorted, int i) {
+        if (array[i] > array[i + 1]) {
+            int temp = array[i];
+            array[i] = array[i + 1];
+            array[i + 1] = temp;
+            isSorted = true;
+        }
+        return isSorted;
     }
 
 }
