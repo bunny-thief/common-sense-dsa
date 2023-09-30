@@ -28,7 +28,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return String.format("(%d)");
+        return String.format("(%d)", getData());
     }
 
 }
