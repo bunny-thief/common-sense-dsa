@@ -22,4 +22,19 @@ public class LinkedList {
         return last;
     }
 
+    public void setLast(Node last) {
+        this.last = last;
+    }
+
+    public Node addFirst(int data) {
+        Node node = new Node(data);
+        if (getFirst() == null) {
+            setFirst(node);
+            setLast(node);
+        }
+        node.setNext(first);
+        setFirst(node);
+        return node;
+    }
+
 }
