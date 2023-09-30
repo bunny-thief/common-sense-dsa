@@ -37,4 +37,12 @@ public class LinkedList {
         return node;
     }
 
+    public Node addLast(int data) {
+        Node node = new Node(data);
+        Node last = getLast();
+        last.setNext(node);
+        setLast(node);
+        return node;
+    }
+
 }
