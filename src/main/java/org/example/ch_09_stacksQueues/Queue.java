@@ -52,4 +52,13 @@ public class Queue {
         setTail(node);
     }
 
+    public Node pop() {
+        Node previousHead = null;
+        if (getHead() != null) {
+            previousHead = getHead();
+            setHead(previousHead.getNext());
+        }
+        return previousHead;
+    }
+
 }
