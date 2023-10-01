@@ -61,4 +61,8 @@ public class Queue {
         return previousHead;
     }
 
+    public void peek() {
+        System.out.println(getHead());
+    }
+
 }
