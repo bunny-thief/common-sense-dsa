@@ -86,4 +86,16 @@ public class BinarySearchTree {
         return search(data, treeNode.getRight());
     }
 
+    public int min() {
+        return min(0, getRoot());
+    }
+
+    public int min(int min, TreeNode treeNode) {
+        if (treeNode.getLeft() == null) {
+            return treeNode.getData();
+        }
+
+        return min(0, treeNode.getLeft());
+    }
+
 }
