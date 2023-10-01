@@ -98,4 +98,15 @@ public class BinarySearchTree {
         return min(0, treeNode.getLeft());
     }
 
+    public int max() {
+        return max(0, getRoot());
+    }
+
+    public int max(int max, TreeNode treeNode) {
+        if (treeNode.getRight() == null) {
+            return treeNode.getData();
+        }
+        return max(0, treeNode.getRight());
+    }
+
 }
