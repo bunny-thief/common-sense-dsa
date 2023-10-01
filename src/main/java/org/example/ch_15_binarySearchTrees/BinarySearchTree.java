@@ -66,4 +66,24 @@ public class BinarySearchTree {
         }
     }
 
+    public boolean search(int data) {
+        return search(data, getRoot());
+    }
+
+    public boolean search(int data, TreeNode treeNode) {
+        if (treeNode == null) {
+            return false;
+        }
+
+        if (treeNode.getData() == data) {
+            return true;
+        }
+
+        if (data < treeNode.getData()) {
+            return search(data, treeNode.getLeft());
+        }
+
+        return search(data, treeNode.getRight());
+    }
+
 }
