@@ -37,4 +37,19 @@ public class Queue {
         this.tail = tail;
     }
 
+    public void push(int data) {
+        Node node = new Node(data);
+        if (getTail() == null) {
+            setTail(node);
+
+            if (getHead() == null) {
+                setHead(node);
+            }
+            return;
+        }
+
+        tail.setNext(node);
+        setTail(node);
+    }
+
 }
