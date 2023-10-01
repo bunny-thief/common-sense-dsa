@@ -15,4 +15,35 @@ public class BinarySearchTree {
         root = new TreeNode(data);
     }
 
+    public TreeNode addNode(int data) {
+        return addNode(data, root);
+    }
+
+    public TreeNode addNode(int data, TreeNode treeNode) {
+
+        if (treeNode == null) {
+            treeNode = new TreeNode(data);
+            if (getRoot() == null) {
+                root = treeNode;
+            }
+            return treeNode;
+        }
+
+        if (data < treeNode.getData()) {
+            if (treeNode.getLeft() == null) {
+                treeNode.setLeft(new TreeNode(data));
+            } else {
+                return addNode(data, treeNode.getLeft());
+            }
+
+        } else if (data > treeNode.getData()) {
+            if (treeNode.getRight() == null) {
+                treeNode.setRight(new TreeNode(data));
+            } else {
+                return addNode(data, treeNode.getRight());
+            }
+        }
+        return null;
+    }
+
 }
