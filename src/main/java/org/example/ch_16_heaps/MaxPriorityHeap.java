@@ -31,5 +31,18 @@ public class MaxPriorityQueue {
     private int getParent(int index) {
         return (index - 1) / 2;
     }
-    
+
+    public void insert(int data) {
+        int index = last;
+        heap[index] = data;
+
+        while (index > 0 && data > heap[getParent(index)]) {
+            int temp = heap[getParent(index)];
+            heap[getParent(index)] = data;
+            heap[index] = temp;
+            index = getParent(index);
+        }
+        last++;
+    }
+
 }
