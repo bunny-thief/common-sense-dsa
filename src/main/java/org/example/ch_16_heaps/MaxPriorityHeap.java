@@ -43,4 +43,8 @@ public class MaxPriorityHeap {
         last++;
     }
 
+    public int getMax() {
+        return heap[0];
+    }
+
 }
