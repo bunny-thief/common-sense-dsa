@@ -49,6 +49,7 @@ public class MaxPriorityHeap {
 
         int index = 0;
         heap[index] = heap[--last];
+        heap[last + 1] = 0;
 
         while (hasGreaterChild(index)) {
             int largestChildIndex = getLargestChildIndex(index);
