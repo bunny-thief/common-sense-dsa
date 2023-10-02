@@ -52,17 +52,17 @@ public class MaxPriorityHeap {
 
         while (hasGreaterChild(index)) {
             int largestChildIndex = getLargestChildIndex(index);
+
             int temp = heap[largestChildIndex];
             heap[largestChildIndex] = heap[index];
             heap[index] = temp;
             index = largestChildIndex;
         }
-
         return max;
     }
 
     private boolean hasGreaterChild(int index) {
-        return heap[getLeft(index)] > heap[index] && heap[getRight(index)] > heap[index];
+        return heap[getLeft(index)] > heap[index] || heap[getRight(index)] > heap[index];
     }
 
     private int getLargestChildIndex(int index) {
