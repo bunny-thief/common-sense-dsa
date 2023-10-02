@@ -12,4 +12,16 @@ public class MaxPriorityQueue {
         last = 0;
     }
 
+    private int getLeft(int index) {
+        return (index * 2) + 1;
+    }
+
+    private int getRight(int index) {
+        return (index * 2) + 2;
+    }
+
+    private int getParent(int index) {
+        return (index - 1) / 2;
+    }
+
 }
