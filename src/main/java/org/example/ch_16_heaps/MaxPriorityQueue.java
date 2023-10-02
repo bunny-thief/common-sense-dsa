@@ -12,6 +12,14 @@ public class MaxPriorityQueue {
         last = 0;
     }
 
+    private int getRoot() {
+        return heap[0];
+    }
+
+    private int getLast() {
+        return heap[last];
+    }
+
     private int getLeft(int index) {
         return (index * 2) + 1;
     }
@@ -23,5 +31,5 @@ public class MaxPriorityQueue {
     private int getParent(int index) {
         return (index - 1) / 2;
     }
-
+    
 }
