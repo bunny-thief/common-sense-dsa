@@ -43,6 +43,32 @@ public class MaxPriorityHeap {
         last++;
     }
 
+    public int delete() {
+
+        int max = heap[0];
+
+        int index = 0;
+        heap[index] = heap[--last];
+
+        while (hasGreaterChild(index)) {
+            int largestChildIndex = getLargestChildIndex(index);
+            int temp = heap[largestChildIndex];
+            heap[largestChildIndex] = heap[index];
+            heap[index] = temp;
+            index = largestChildIndex;
+        }
+
+        return max;
+    }
+
+    private boolean hasGreaterChild(int index) {
+        return heap[getLeft(index)] > heap[index] && heap[getRight(index)] > heap[index];
+    }
+
+    private int getLargestChildIndex(int index) {
+        return heap[getLeft(index)] > heap[getRight(index)] ? getLeft(index) : getRight(index);
+    }
+
     public int getMax() {
         return heap[0];
     }
