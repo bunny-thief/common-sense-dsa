@@ -29,4 +29,19 @@ public class DoublyLinkedList {
         return node;
     }
 
+    public void displayNodes() {
+        displayNodes(getFirst());
+    }
+
+    public void displayNodes(DLNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node);
+        if (node.getNext() == null) {
+            return;
+        }
+        displayNodes(node.getNext());
+    }
+
 }
