@@ -3,9 +3,11 @@ package org.example.ch_14_nodeBasedDataStructures;
 public class DoublyLinkedList {
 
     private DLNode first;
+    private DLNode last;
 
     public DoublyLinkedList() {
         first = null;
+        last = null;
     }
 
     public DLNode getFirst() {
@@ -16,10 +18,19 @@ public class DoublyLinkedList {
         this.first = first;
     }
 
+    private DLNode getLast() {
+        return last;
+    }
+
+    private void setLast(DLNode last) {
+        this.last = last;
+    }
+
     public DLNode insertFirst(int data) {
         DLNode node = new DLNode(data);
         if(getFirst() == null) {
             setFirst(node);
+            setLast(node);
             return node;
         }
 
@@ -38,12 +49,14 @@ public class DoublyLinkedList {
 
         if (node == null && getFirst() == null) {
             setFirst(newNode);
+            setLast(newNode);
             return newNode;
         }
 
         if (node.getNext() == null) {
             node.setNext(newNode);
             newNode.setPrevious(node);
+            setLast(newNode);
             return newNode;
         }
 
