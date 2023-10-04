@@ -64,6 +64,23 @@ public class DoublyLinkedList {
         return insertLast(data, node.getNext());
     }
 
+    public DLNode insertAt(int data, int index, DLNode node) {
+        if (node == null || node.getNext() == null) {
+            return null;
+        }
+
+        if (index == 1) {
+            DLNode newNode = new DLNode(data);
+            DLNode next = node.getNext();
+            newNode.setPrevious(node);
+            newNode.setNext(next);
+            node.setNext(newNode);
+            next.setPrevious(newNode);
+            return newNode;
+        }
+        return insertAt(data, index - 1, node.getNext());
+    }
+
     public void displayNodes() {
         displayNodes(getFirst());
     }
