@@ -35,6 +35,7 @@ public class DoublyLinkedList {
         }
 
         node.setNext(first);
+        first.setPrevious(node);
         setFirst(node);
 
         return node;
@@ -76,6 +77,21 @@ public class DoublyLinkedList {
             return;
         }
         displayNodes(node.getNext());
+    }
+
+    public void displayNodesReverse() {
+        displayNodesReverse(getLast());
+    }
+
+    public void displayNodesReverse(DLNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node);
+        if (node.getPrevious() == null) {
+            return;
+        }
+        displayNodesReverse(node.getPrevious());
     }
 
 }
