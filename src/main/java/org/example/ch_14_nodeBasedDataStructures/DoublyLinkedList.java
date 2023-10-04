@@ -16,7 +16,7 @@ public class DoublyLinkedList {
         this.first = first;
     }
 
-    public DLNode insert(int data) {
+    public DLNode insertFirst(int data) {
         DLNode node = new DLNode(data);
         if(getFirst() == null) {
             setFirst(node);
@@ -27,6 +27,27 @@ public class DoublyLinkedList {
         setFirst(node);
 
         return node;
+    }
+
+    public DLNode insertLast(int data) {
+        return insertLast(data, getFirst());
+    }
+
+    public DLNode insertLast(int data, DLNode node) {
+        DLNode newNode = new DLNode(data);
+
+        if (node == null && getFirst() == null) {
+            setFirst(newNode);
+            return newNode;
+        }
+
+        if (node.getNext() == null) {
+            node.setNext(newNode);
+            newNode.setPrevious(node);
+            return newNode;
+        }
+
+        return insertLast(data, node.getNext());
     }
 
     public void displayNodes() {
