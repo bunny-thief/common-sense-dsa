@@ -29,4 +29,19 @@ public class ArrayQueue {
         queue[tail++] = node;
     }
 
+    public Node dequeue() {
+        if (queue[0] != null) {
+            Node removedNode = queue[0];
+            // shift all nodes left
+            int index = 1;
+            while (index < tail) {
+                queue[index - 1] = queue[index];
+                index++;
+            }
+            queue[--tail] = null;
+            return removedNode;
+        }
+        return null;
+    }
+
 }
