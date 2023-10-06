@@ -2,8 +2,6 @@ package org.example.ch_09_stacksQueues;
 
 import org.example.ch_14_nodeBasedDataStructures.Node;
 
-import java.util.Arrays;
-
 public class ArrayQueue {
 
     private Node[] queue;
@@ -20,7 +18,7 @@ public class ArrayQueue {
         }
     }
 
-    public void insert(int data) {
+    public void enqueue(int data) {
         if (tail >= queue.length) {
             return;
         }
