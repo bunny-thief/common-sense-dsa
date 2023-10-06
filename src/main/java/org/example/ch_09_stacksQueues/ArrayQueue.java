@@ -14,4 +14,13 @@ public class ArrayQueue {
         tail = 0;
     }
 
+    public void insert(int data) {
+        if (tail >= queue.length) {
+            return;
+        }
+
+        Node node = new Node(data);
+        queue[tail++] = node;
+    }
+    
 }
