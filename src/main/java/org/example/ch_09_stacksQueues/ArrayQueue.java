@@ -14,6 +14,12 @@ public class ArrayQueue {
         tail = 0;
     }
 
+    public void peek() {
+        if (queue[0] != null) {
+            System.out.println(queue[0]);
+        }
+    }
+
     public void insert(int data) {
         if (tail >= queue.length) {
             return;
@@ -22,5 +28,5 @@ public class ArrayQueue {
         Node node = new Node(data);
         queue[tail++] = node;
     }
-    
+
 }
